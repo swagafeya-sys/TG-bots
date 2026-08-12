@@ -6,7 +6,7 @@ import json
 import os
 import upgrade_features as upgrade
 from datetime import datetime, timedelta
-из contextlib импорт закрытие
+from contextlib import closing
 импорт запросов
 
 # --- КОНФИГУРАЦИЯ ---
