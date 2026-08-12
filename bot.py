@@ -6,34 +6,34 @@ import json
 import os
 import upgrade_features as upgrade
 from datetime import datetime, timedelta
-from contextlib import closing
-import requests
+из contextlib импорт закрытие
+импорт запросов
 
 # --- КОНФИГУРАЦИЯ ---
-TOKEN = "8287821828:AAGMXt0L1fEhuQUNWIXrNLRgrYRRj7v9cfQ"
+ТОКЕН = "8287821828:AAGMXt0L1fEhuQUNWIXrNLRgrYRRj7v9cfQ"
 ADMIN_ID = 8498865317
 last_update_id = 0
 
 # --- ФУНКЦИИ TELEGRAM ---
-def send_message(chat_id, text):
-    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
-    data = {"chat_id": chat_id, "text": text, "parse_mode": "Markdown"}
-    try:
-        response = requests.post(url, data=data, timeout=10)
-        if response.status_code != 200:
-            print(f"Ошибка отправки: {response.text}")
-    except Exception as e:
-        print(f"Ошибка отправки: {e}")
+def  send_message ( chat_id, text ) :
+    url = f"https://api.telegram.org/bot { TOKEN } /sendMessage"
+    data = { "chat_id" : chat_id, "text" : text, "parse_mode" : "Markdown" }
+    пытаться :
+response         = requests.post ( url, data=data, timeout= 10 )
+        если response.status_code ! = 200 :
+            print ( f"Ошибка отправки: { response. text } " )
+    за исключением исключения как e:
+        print ( f"Ошибка отправки: { e } " )
 
-def send_keyboard(chat_id, text, keyboard):
-    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
-    data = {"chat_id": chat_id, "text": text, "reply_markup": json.dumps(keyboard), "parse_mode": "Markdown"}
-    try:
-        requests.post(url, data=data, timeout=10)
-    except Exception as e:
-        print(f"Ошибка: {e}")
+def  send_keyboard ( chat_id, text, keyboard ) :
+    url = f"https://api.telegram.org/bot { TOKEN } /sendMessage"
+    data = { "chat_id" : chat_id, "text" : text, " reply_markup" : json.dumps ( keyboard ) , "parse_mode" : "Markdown" }
+    пытаться :
+        requests.post ( url, data=data, timeout = 10 )
+    за исключением исключения как e:
+        print ( f"Ошибка: { e } " )
 
-def answer_callback(callback_id):
+def  answer_callback ( callback_id ) :
     url = f"https://api.telegram.org/bot{TOKEN}/answerCallbackQuery"
     data = {"callback_query_id": callback_id}
     try:
