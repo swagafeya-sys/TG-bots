@@ -7,7 +7,7 @@ import os
 import upgrade_features as upgrade
 from datetime import datetime, timedelta
 from contextlib import closing
-импорт запросов
+import requests
 
 # --- КОНФИГУРАЦИЯ ---
 ТОКЕН = "8287821828:AAGMXt0L1fEhuQUNWIXrNLRgrYRRj7v9cfQ"
