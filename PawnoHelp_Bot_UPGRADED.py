@@ -1,4 +1,4 @@
-# автор Shumaher
+# автор SWAGA
 import time
 import random
 import sqlite3
@@ -10,8 +10,8 @@ from contextlib import closing
 import requests
 
 # --- КОНФИГУРАЦИЯ ---
-TOKEN = os.getenv("BOT_TOKEN", "")
-ADMIN_ID = 6688031783
+TOKEN = "8287821828:AAGMXt0L1fEhuQUNWIXrNLRgrYRRj7v9cfQ"
+ADMIN_ID = 8498865317
 last_update_id = 0
 
 # --- ФУНКЦИИ TELEGRAM ---
@@ -211,24 +211,61 @@ SHOP_ITEMS = {
 def handle_start(chat_id):
     text = """👋 *Добро пожаловать!*
 
-📋 *Команды:*
-/balance - Баланс
-/profile - Профиль
-/work - Работать
-/rob - Ограбить банк
-/steal - Угнать авто
-/shop - Магазин
-/inventory - Инвентарь
-/buyhouse - Купить дом (5000💰)
-/buygarage - Купить гараж (3000💰)
-/buybusiness - Купить бизнес
-/event - Ивент
-/eventshop - Ивент магазин
-/promo - Промокод
-/donate - Донат
+👋 Добро пожаловать в Fluger Boy!
 
-⚙️ *Админ:*
-/admin - Админ панель
+💰 ЭКОНОМИКА
+/balance — Баланс
+/pay — Перевести деньги
+/daily — Ежедневная награда
+/top — Топ игроков
+/bank — Банк
+
+👤 ИГРОК
+/profile — Профиль
+/achievements — Достижения
+/inventory — Инвентарь
+
+💼 РАБОТА
+/work — Работать
+/works — Список работ
+
+🏠 НЕДВИЖИМОСТЬ
+/houses — Дома
+/buyhouse — Купить дом
+/garage — Гараж
+/buygarage — Купить гараж
+
+🚗 АВТО
+/cars — Мои автомобили
+/buycar — Автосалон
+/sellcar — Продать авто
+/drive — Поехать
+
+🏢 БИЗНЕС
+/business — Мой бизнес
+/buybusiness — Купить бизнес
+/upgradebusiness — Улучшить бизнес
+/collect — Собрать доход
+
+🎯 ИВЕНТЫ
+/event — Текущий ивент
+/eventshop — Магазин ивента
+
+🛒 МАГАЗИН
+/shop — Магазин
+/sell — Продать предмет
+/use — Использовать предмет
+
+🎲 ДЕЙСТВИЯ
+/rob — Ограбить банк
+/steal — Угнать авто
+
+🎁 ПРОЧЕЕ
+/promo — Промокод
+/donate — Поддержать проект
+
+⚙️ АДМИН
+/admin — Админ-панель
 
 ✨ Дополнительно: /daily /bank /pay /top /cars /realty /business /achievements /jobs /newhelp"""
     send_message(chat_id, text)
@@ -272,7 +309,8 @@ def handle_work(chat_id, user_id):
     
     last_work = datetime.fromisoformat(user['last_work_time']) if user['last_work_time'] != '2000-01-01' else datetime.min
     if datetime.now() - last_work < timedelta(minutes=10):
-        remaining = timedelta(minutes=10) - (datetime.now() - last_work)
+        remaining = timedelta(minutАдмин-панель
+                              tetime.now() - last_work)
         send_message(chat_id, f"⏳ Отдых! Работа через {remaining.seconds // 60} мин.")
         return
     
