@@ -3,7 +3,7 @@ import os
 import upgrade_features as upgrade
 
 2) Токен замени на:
-TOKEN = os.getenv("BOT_TOKEN", "")
+TOKEN = "8287821828:AAGMXt0L1fEhuQUNWIXrNLRgrYRRj7v9cfQ"
 
 3) В обработке входящего сообщения сразу после user_id/text добавь:
 upgrade.set_username(user_id, msg.get("from", {}).get("username", ""))
@@ -57,5 +57,5 @@ already = db.execute("SELECT 1 FROM promo_uses WHERE user_id=? AND code=?", (use
 db.execute("INSERT INTO promo_uses(user_id,code,used_at) VALUES(?,?,?)", (user_id, code, upgrade.now()))
 
 8) Запуск:
-BOT_TOKEN=<новый токен>
-ADMIN_ID=<твой Telegram ID>
+BOT_TOKEN= "8287821828:AAGMXt0L1fEhuQUNWIXrNLRgrYRRj7v9cfQ"
+ADMIN_ID= 8498865317
