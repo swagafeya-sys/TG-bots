@@ -18,7 +18,7 @@ last_update_id = 0
 def  send_message ( chat_id, text ) :
     url = f"https://api.telegram.org/bot { TOKEN } /sendMessage"
     data = { "chat_id" : chat_id, "text" : text, "parse_mode" : "Markdown" }
-    пытаться :
+    try: 
 response         = requests.post ( url, data=data, timeout= 10 )
         если response.status_code ! = 200 :
             print ( f"Ошибка отправки: { response. text } " )
@@ -28,7 +28,7 @@ response         = requests.post ( url, data=data, timeout= 10 )
 def  send_keyboard ( chat_id, text, keyboard ) :
     url = f"https://api.telegram.org/bot { TOKEN } /sendMessage"
     data = { "chat_id" : chat_id, "text" : text, " reply_markup" : json.dumps ( keyboard ) , "parse_mode" : "Markdown" }
-    пытаться :
+    try:
         requests.post ( url, data=data, timeout = 10 )
     за исключением исключения как e:
         print ( f"Ошибка: { e } " )
