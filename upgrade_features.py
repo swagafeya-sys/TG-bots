@@ -32,6 +32,22 @@ def now():
     return datetime.now().isoformat(timespec='seconds')
 
 def init():
+    db('''
+    CREATE TABLE IF NOT EXISTS users (
+        user_id INTEGER PRIMARY KEY,
+        balance INTEGER DEFAULT 0,
+        xp INTEGER DEFAULT 0,
+        level INTEGER DEFAULT 1,
+        work TEXT DEFAULT 'Уборщик',
+        last_work_time TEXT DEFAULT '2000-01-01',
+        house TEXT DEFAULT '',
+        garage TEXT DEFAULT '',
+        business TEXT DEFAULT '',
+        warns INTEGER DEFAULT 0,
+        last_tax_time TEXT DEFAULT '2000-01-01',
+        event_points INTEGER DEFAULT 0
+    )
+''')
     cols = db('PRAGMA table_info(users)', all_rows=True)
     names = [x[1] for x in cols]
     for col, typ in [('username','TEXT DEFAULT ""'),('last_daily','TEXT DEFAULT "2000-01-01"'),('daily_streak','INTEGER DEFAULT 0'),('last_seen','TEXT DEFAULT "2000-01-01"')]:
