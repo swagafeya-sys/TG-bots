@@ -3819,4 +3819,4 @@ async def private_handler(message: Message):
     await message.answer("👋 Привет! Чтобы подать заявку в одну из бесед, напишите:\n"
                          "👉 подать [ID чата]")
 
-bot.run_forever()
+bot.run()
