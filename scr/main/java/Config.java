@@ -1,0 +1,3 @@
+package ru.faktish.config;
+import java.io.*;import java.nio.file.*;import java.util.*;
+public class Config { private final Properties p=new Properties(); public Config() throws Exception {Path x=Path.of("config.properties"); if(!Files.exists(x)) Files.copy(Path.of("config.properties.example"),x); try(InputStream in=Files.newInputStream(x)){p.load(in);} } public String token(){return p.getProperty("vk_token","").trim();} public String api(){return p.getProperty("api_version","5.199");} public long group(){return Long.parseLong(p.getProperty("group_id","0"));} public long owner(){return Long.parseLong(p.getProperty("owner_id","1060048895"));} public String db(){return p.getProperty("database","data/faktish.db");}}
