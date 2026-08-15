@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<h1>Новая тема: {{cat.name}}</h1><form method="post" class="card"><input name="title" required placeholder="Заголовок"><textarea name="content" required placeholder="Текст темы"></textarea><button class="btn">Создать тему</button></form>{% endblock %}
