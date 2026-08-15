@@ -1,3 +1,0 @@
-package ru.faktish;
-import java.text.*;import java.util.*;
-public class Util { public static String money(long n){return String.format(Locale.US,"%,d",n).replace(',','.');} public static String now(){return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());} public static long target(String[] a){for(String s:a){try{if(s.startsWith("id"))return Long.parseLong(s.substring(2)); if(s.matches("\\d+"))return Long.parseLong(s);}catch(Exception ignored){}}return 0;} public static String args(String[] a,int from){StringBuilder b=new StringBuilder();for(int i=from;i<a.length;i++){if(i>from)b.append(' ');b.append(a[i]);}return b.toString();}}
