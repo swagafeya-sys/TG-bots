@@ -1,1 +1,0 @@
-{% extends 'base.html' %}{% block content %}<section class="hero"><h1>Добро пожаловать на форум</h1><p>Обсуждения, помощь и модерация в одном месте.</p></section>{% for c in categories %}<a class="card" href="/category/{{c.id}}"><h2>{{c.name}}</h2><p>{{c.description}}</p></a>{% endfor %}{% endblock %}
